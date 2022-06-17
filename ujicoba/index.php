@@ -56,8 +56,8 @@ if (isset($_GET["keyword"])) {
     <br> <br>
     <!-- btw ini di ganti get supaya bisa muncul di link sama dengan halaman. kalau post dia ga muncul -->
     <form action="" method="get">
-        <input type="text" name="keyword" value="<?=isset($_GET["keyword"]) ? $_GET["keyword"] : "";?>" size="30" autofocus placeholder="Mencari" autocomplete="off">
-        <button type="submit" name="cari">cari</button>
+        <input type="text" name="keyword" value="<?=isset($_GET["keyword"]) ? $_GET["keyword"] : "";?>" size="30" autofocus placeholder="Mencari" autocomplete="off" id="keyword">
+        <button type="submit" name="cari" id="tombol-cari">cari</button>
     </form>
     <br><br>
     <!-- navigasi untuk page -->
@@ -77,6 +77,8 @@ if (isset($_GET["keyword"])) {
     <a href="?halaman=<?=$halamanaktif + 1;?><?php echo isset($_GET["keyword"]) ? "&keyword=" . $_GET["keyword"] : ""; ?>">&raquo;</a>
     <?php endif;?>
     <br> <br>
+
+    <div id="container">
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>No.</th>
@@ -122,6 +124,9 @@ if (isset($_GET["keyword"])) {
         <?php $i++;?>
         <?php endforeach;?>
     </table>
+    </div>
+
+<script src="js/script.js"></script>
 </body>
 
 </html>
